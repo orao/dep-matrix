@@ -197,7 +197,7 @@ def Main(argv):
                         graphName = "inc_dep"
                         if len(config.projectName) == 1:
                             graphName = specialNames.get(config.projectName[0], config.projectName[0])
-                        print "digraph", graphName, "{"
+                        print "digraph", '"{0}"'.format(graphName), "{"
                         if config.dotConfig is not None:
                             with codecs.open(config.dotConfig, 'r') as f:
                                 contents = f.read()
@@ -206,10 +206,10 @@ def Main(argv):
                             wasPrinted = False
                             for dependency in dependencieTree[project]:
                                 if dependency in dependencyList:
-                                    print indent, project, "->", dependency, ";"
+                                    print indent, '"{0}"'.format(project), "->", '"{0}"'.format(dependency), ";"
                                     wasPrinted = True
                             if not wasPrinted:
-                                print indent, project
+                                print indent, '"{0}"'.format(project)
                         print "}"
                 else:
                     for dependency in dependencyList:
