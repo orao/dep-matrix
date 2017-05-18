@@ -1,9 +1,10 @@
 Include Dependency Scripts
 ==========================
 
-The include dependency scripts are given a desired hierarchy of C/C++ projects and they then process
-a given source directory's files for #include directives and compare the actual inclusions
-(dependencies) between the different projects with the desired hierarchy.
+The include dependency scripts are given a desired hierarchy of C/C++ projects
+and they then process a given source directory's files for #include directives
+and compare the actual inclusions (dependencies) between the different projects
+with the desired hierarchy.
 
 There are 4 scripts in this directory:
   * dependencydatabase.py
@@ -19,20 +20,22 @@ And their functionality is documented below.
 dependencydatabase.py
 ---------------------
 
-This script processes a source directory and generates an SQLite3 database with all of the different
-#include directives that it had found.
+This script processes a source directory and generates an SQLite3 database with
+all of the different #include directives that it had found.
 
-This database also contains the specified project hierarchy and each file processed is associated
-with its project (if known) according to the project's system path. Similarly, all the #include
-directives that are found in a file are processed and associated with a project if the #include-d
-file exists in that projects directory.
+This database also contains the specified project hierarchy and each file
+processed is associated with its project (if known) according to the project's
+system path. Similarly, all the #include directives that are found in a file
+are processed and associated with a project if the #include-d file exists in
+that projects directory.
 
-The database schema can be found inside of the script itself. You should refer to the script for the
-most up-to-date schema information.
+The database schema can be found inside of the script itself. You should refer
+to the script for the most up-to-date schema information.
 
-The script requires a configuration INI file which specifies the source directory, included and
-excluded file patterns and the list of known projects. The script itself contains an example config
-file which it can print on the command line:
+The script requires a configuration INI file which specifies the source
+directory, included and excluded file patterns and the list of known projects.
+The script itself contains an example config file which it can print on the
+command line:
 
     python dependencydatabase.py --print-example-config
 
@@ -44,18 +47,17 @@ See help for details
 dependency2html.py
 ------------------
 
-This script generates an HTML report containing a dependency matrix for all the projects specified
-in its INI file (which is shared and has the same format).
+This script generates an HTML report containing a dependency matrix for all the
+projects specified in its INI file (which is shared and has the same format).
 
 The INI file's projects can also have their colour modified by adding the:
 
-    "css" : {
-        "background-color": "#99CCFF"
-    },
+    "css" : { "background-color": "#99CCFF" },
 
 setting.
 
-The output of the script is an HTML file with a filename specified in the INI file.
+The output of the script is an HTML file with a filename specified in the INI
+file.
 
 See
 
@@ -66,10 +68,10 @@ for details.
 dependencylist.py
 -----------------
 
-This script is intended to be used by other scripts, and generates a simple list of actual
-dependencies that a particular project has. It does this by using the dependencydatabase.py script
-to either generate an inmemory database, a file database or it can also use an existing database to
-generate its report.
+This script is intended to be used by other scripts, and generates a simple
+list of actual dependencies that a particular project has. It does this by
+using the dependencydatabase.py script to either generate an inmemory database,
+a file database or it can also use an existing database to generate its report.
 
 See
 
@@ -81,9 +83,9 @@ for details.
 utility.py
 ----------
 
-This script contains a bunch misc. utilities that the other scripts share and use but don't own.
-Currently it only contains a Logger which standardises the way the the scripts print info, debug and
-error messages.
+This script contains a bunch misc. utilities that the other scripts share and
+use but don't own.  Currently it only contains a Logger which standardises the
+way the the scripts print info, debug and error messages.
 
 License
 =======
