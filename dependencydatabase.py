@@ -112,7 +112,6 @@ class DependencyScriptConfiguration(object):
                 if self.isConfigured:
                     iniPath, iniFilename = os.path.split(self.scriptIni)
                     self.sourcePath = toPosixPath(os.path.normpath(os.path.join(iniPath, self.sourcePath)))
-                    print('source-path: {0}'.format(self.sourcePath))
         except:
             self.sourcePath = './'
         
