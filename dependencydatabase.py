@@ -837,12 +837,14 @@ ProjectGroupsList: {
             "type": "project",
             "name": "FirstProject",
             "path": "Path/To/First/Project/",
+            "include-path": "Path/To/First/Project/include/"
             "dependencies": []
           },
           {
             "type": "project",
             "name": "SecondProject",
             "path": "Path/To/Second/Project/",
+            "include-path": "Path/To/Second/Project/include/"
             "dependencies": [
                 "FirstProject"
             ]
